@@ -1,0 +1,16 @@
+{
+  "name": "aca-whatsapp-policy-bot",
+  "version": "1.0.0",
+  "description": "WhatsApp bot (via WATI) that answers ACA school policy questions using Claude.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "scrape-website": "node scrape-website.js"
+  },
+  "dependencies": {
+    "axios": "^1.7.7",
+    "cheerio": "^1.0.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0"
+  }
+}
