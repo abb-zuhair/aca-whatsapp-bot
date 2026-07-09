@@ -148,6 +148,16 @@ async function askClaude(waId, question) {
     .join("\n")
     .trim();
 
+  // Claude's API returns exact token counts used for this request — log them
+  // so you can see real usage per WhatsApp message without checking the
+  // Anthropic console each time.
+  const usage = response.data.usage;
+  if (usage) {
+    console.log(
+      `[TOKENS] input: ${usage.input_tokens}, output: ${usage.output_tokens}, total: ${usage.input_tokens + usage.output_tokens}`
+    );
+  }
+
   history.push({ role: "assistant", content: answer });
   return answer;
 }
